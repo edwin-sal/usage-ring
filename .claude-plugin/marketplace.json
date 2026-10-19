@@ -1,0 +1,14 @@
+{
+  "name": "usage-ring",
+  "owner": {
+    "name": "Edwin"
+  },
+  "description": "Usage rings for Claude Code: 5h limit, context window and auto-compact room",
+  "plugins": [
+    {
+      "name": "usage-ring",
+      "source": "./",
+      "description": "Rings above the prompt showing remaining 5h limit, context window and room before auto-compact, plus the current git branch"
+    }
+  ]
+}

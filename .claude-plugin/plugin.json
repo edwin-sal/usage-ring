@@ -1,0 +1,8 @@
+{
+  "name": "usage-ring",
+  "version": "0.1.0",
+  "description": "Rings above the prompt showing remaining 5h limit, context window and room before auto-compact, plus the current git branch",
+  "author": { "name": "Edwin" },
+  "repository": "https://github.com/edwin-sal/usage-ring",
+  "types": "./types/index.d.ts"
+}
