@@ -125,8 +125,11 @@ export const register: Register = on => {
       ['Context', value.context, greenToRed],
       ['Compact', value.compact, blueToRed],
     ]
+    // Other mods may draw this band too, so keep their rows under the rings.
+    const below = await next(e)
 
     return (
+      <Box flexDirection="column">
       <Box alignItems="center" width="100%">
         <Box gap={3} flexShrink={0}>
         {rings.map(([label, left, tint]) =>
@@ -151,6 +154,8 @@ export const register: Register = on => {
             </Text>
           </Box>
         )}
+      </Box>
+      {below}
       </Box>
     )
   })

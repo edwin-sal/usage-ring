@@ -8,7 +8,8 @@ test('draws a ring per window with the remaining percentage', async ($, on) => {
     rateLimits: [{ kind: 'five_hour', percentUsed: 60 }],
   } }))
 
-  on('ui.render', async () => ({ value: null }) as never)
+  // Another mod's row in the band, like a button
+  on('ui.render', () => ({ type: 'Text', props: {}, children: ['Fix grammar'] }))
   const mounted = await $.ui.mount({
     plugin: 'usage-ring',
     surface: 'desktop',
@@ -19,4 +20,6 @@ test('draws a ring per window with the remaining percentage', async ($, on) => {
   expect(tree).toContain('Context remaining 75%')
   expect(tree).toContain('Compact remaining 75%')
   expect(tree).toContain('5h limit remaining 40%')
+  // The rings keep what other mods draw in the band
+  expect(tree).toContain('Fix grammar')
 })
